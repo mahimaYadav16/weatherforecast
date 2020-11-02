@@ -1,0 +1,20 @@
+<mat-form-field>
+<form class="lookCity" [formGroup]="forecastForm" (ngSubmit)="onSubmit()">
+  <input matInput type="text" class="cityName" formControlName="forecastCity" placeholder="Name of city">
+  <button mat-button color="primary" class="btn">Search forcast weather</button>
+</form>
+</mat-form-field>
+<mat-card>
+    <div class="day" *ngFor="let item of cityforecast">
+        <h2>{{day.day | date:'MMMM d'}}</h2>
+        <div class="icon">
+            <img src="" />
+        </div>
+        <div class="temp">
+            <h3>{{day.tempMax}}</h3>
+            <h3>{{day.tempMin}}</h3>
+
+        </div>
+    </div>
+   
+</mat-card>
